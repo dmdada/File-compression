@@ -1,2 +1,2 @@
 # File-compression
-文件压缩
+基于哈夫曼算法的文件压缩
