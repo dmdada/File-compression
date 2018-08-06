@@ -34,28 +34,27 @@ struct CodeInfo
 		return ret;
 	}
 
-	unsigned char ch;// ×Ö·û
-	string code;// ±àÂë
-	long long cnt;// ³öÏÖ´ÎÊı
+	unsigned char ch;// å­—ç¬¦
+	string code;// ç¼–ç 
+	long long cnt;// å‡ºç°æ¬¡æ•°
 };
-
 
 class FileCompress
 {
 public:
 
-	void Compress(const string &FilePath);// Ñ¹Ëõ
-	void UnCompress(const string &FilePath);// ½âÑ¹Ëõ
+	void Compress(const string &FilePath);// å‹ç¼©
+	void UnCompress(const string &FilePath);// è§£å‹ç¼©
 private:
-	void GetFileName(const string &FilePath, string &output);// »ñÈ¡ÎÄ¼şÃû
-	void GetPostfixName(const string &FilePath, string &output);// »ñÈ¡À©Õ¹Ãû
-	void FillInfo(FILE *src);// Ìî³äinfoĞÅÏ¢
-	void FillCode(const HuffmanTreeNode<CodeInfo> *pRoot);// Ìî³ä±àÂëĞÅÏ¢
-	void CompressCore(FILE *src, FILE *dst, const string &FilePath);// ºËĞÄÑ¹Ëõº¯Êı
-	void SaveCode(FILE *dst, const string &FilePath);// ±£´æ±àÂëĞÅÏ¢ÖÁÑ¹ËõÎÄ¼şÊ×²¿	
-	void GetLine(FILE *src, unsigned char *buf, int size);// »ñÈ¡Ò»ĞĞÔªËØ
-	void GetHead(FILE *src, string &Postfix);// »ñÈ¡Í·²¿ĞÅÏ¢
-	void UnCompressCore(FILE *input, FILE *output, HuffmanTreeNode<CodeInfo> * pRoot);// ºËĞÄ½âÑ¹º¯Êı
+	void GetFileName(const string &FilePath, string &output);// è·å–æ–‡ä»¶å
+	void GetPostfixName(const string &FilePath, string &output);// è·å–æ‰©å±•å
+	void FillInfo(FILE *src);// å¡«å……infoä¿¡æ¯
+	void FillCode(const HuffmanTreeNode<CodeInfo> *pRoot);// å¡«å……ç¼–ç ä¿¡æ¯
+	void CompressCore(FILE *src, FILE *dst, const string &FilePath);// æ ¸å¿ƒå‹ç¼©å‡½æ•°
+	void SaveCode(FILE *dst, const string &FilePath);// ä¿å­˜ç¼–ç ä¿¡æ¯è‡³å‹ç¼©æ–‡ä»¶é¦–éƒ¨	
+	void GetLine(FILE *src, unsigned char *buf, int size);// è·å–ä¸€è¡Œå…ƒç´ 
+	void GetHead(FILE *src, string &Postfix);// è·å–å¤´éƒ¨ä¿¡æ¯
+	void UnCompressCore(FILE *input, FILE *output, HuffmanTreeNode<CodeInfo> * pRoot);// æ ¸å¿ƒè§£å‹å‡½æ•°
 private:
 	CodeInfo*info=new CodeInfo[256];
 };
